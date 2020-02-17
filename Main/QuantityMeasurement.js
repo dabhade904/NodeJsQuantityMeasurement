@@ -2,7 +2,6 @@
 var unit = require('../Main/UnitType');
 
 class Measurement {
-
 	constructor(unit, value) {
 	    this.value = value; //for inch
 	    this.unit = unit;   //for feet 
