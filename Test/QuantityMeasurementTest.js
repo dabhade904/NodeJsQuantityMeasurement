@@ -94,4 +94,10 @@ describe('Legth test cases', function () {
         assert.notEqual(ans,true);
     });
     
+    it('should return equal when 12 inch and 1 feet.', function () {
+        let length1 = new quantityMeasurement(Unit.FEET, 1);
+        let length2 = new quantityMeasurement(Unit.INCH, 12);
+        let ans = length1.compare(length2);
+        assert.equal(ans, true);
+    });
 })
