@@ -37,17 +37,17 @@ describe('Legth test cases', function () {
 describe('Volumes test cases', function () {
 
     it('should return equal 7.57 when addition of gallon and 2 inch', function () {
-        let length1 = new quantityMeasurement(Unit.volume.GALLON,1);
-        let length2 = new quantityMeasurement(Unit.volume.LIT,3.78);
+        let length1 = new quantityMeasurement(Unit.volume.GALLON, 1);
+        let length2 = new quantityMeasurement(Unit.volume.LIT, 3.78);
         let ans = length1.addition(length2);
-        assert.equal(7565.41,ans);
+        assert.equal(7565.41, ans);
     });
 
     it('should return equal 2 litre when addition of 1 litre and 1000 ml', function () {
-        let length1 = new quantityMeasurement(Unit.volume.LIT,1);
-        let length2 = new quantityMeasurement(Unit.volume.ML,1000);
+        let length1 = new quantityMeasurement(Unit.volume.LIT, 1);
+        let length2 = new quantityMeasurement(Unit.volume.ML, 1000);
         let ans = length1.addition(length2);
-        assert.equal(ans,2000);
+        assert.equal(ans, 2000);
     });
 
     it('should return 2 when addition of 1 ml and 1 ml.', function () {
@@ -70,4 +70,14 @@ describe('Volumes test cases', function () {
         let ans = volume1.addition(volume2);
         assert.equal(ans, 2);
     });
+})
+
+describe('Weight  test cases', function () {
+    it('should return addition when of 1 tonne and 1001000 grams.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.TONNE, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.GM, 1000);
+        let ans = weight1.addition(weight2);
+        assert.equal(1001000, ans);
+    });
+
 })

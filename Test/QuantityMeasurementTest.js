@@ -20,7 +20,7 @@ describe('Legth test cases', function () {
     });
 
     it('should return equal when 1 feet and 12 inch.', function () {
-        let length1 = new quantityMeasurement(Unit.length.FEET,1);
+        let length1 = new quantityMeasurement(Unit.length.FEET, 1);
         let length2 = new quantityMeasurement(Unit.length.INCH, 12);
         let ans = length1.compare(length2);
         assert.equal(ans, true);
@@ -158,19 +158,71 @@ describe('Volume convert test cases', function () {
         assert.equal(ans, true);
     });
 
-    // it('should return equal when 1 gallon and 3.78 litre', function () {
-    //     let valume1 = new quantityMeasurement(Unit.volume.GALLON ,1);
-    //     let valume2 = new quantityMeasurement(Unit.volume.LIT,3785.41);
-    //     let ans = valume1.compare(valume2);
-    //     assert.equal(true,ans);
-    // });
-
     it('should return equal when of 1 litr and 1000 ml.', function () {
-        let volume1 = new quantityMeasurement(Unit.volume.LIT,1);
-        let volume2 = new quantityMeasurement(Unit.volume.ML,1000);
-        let ans = volume1.addition(volume2);
-        assert.equal(ans,2 );
+        let volume1 = new quantityMeasurement(Unit.volume.LIT, 1);
+        let volume2 = new quantityMeasurement(Unit.volume.ML, 1000);
+        let ans = volume1.compare(volume2);
+        assert.equal(ans,true);
+    });
+});
+
+describe('Weight convert test cases', function () {
+    it('should return equal when of 1 kg and 1000 gm.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.KG, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.GM, 1000);
+        let ans = weight1.compare(weight2);
+        assert.equal(ans, true);
     });
 
+    it('should return equal when of 1 tonne and 1000 kgs.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.TONNE, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.KG, 1000);
+        let ans = weight1.compare(weight2);
+        assert.equal(ans,true);
+    });
 
+    
+    it('should return equal when of 1 gm and 1 gm.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.GM, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.GM, 1);
+        let ans = weight1.compare(weight2);
+        assert.equal(ans, true);
+    });
+    it('should return equal when of 1 kg and 1 kg.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.KG, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.KG, 1);
+        let ans = weight1.compare(weight2);
+        assert.equal(ans, true);
+    });
+    it('should return equal when of 1 tonne and 1 tonne.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.TONNE, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.TONNE, 1);
+        let ans = weight1.compare(weight2);
+        assert.equal(ans, true);
+    });
+    it('should return not equal when of 1 gm and 0 gm.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.GM, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.GM, 0);
+        let ans = weight1.compare(weight2);
+        assert.equal(ans, false);
+    });
+    it('should return not equal when of 1 kg and 0 kg.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.KG, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.KG, 0);
+        let ans = weight1.compare(weight2);
+        assert.equal(ans, false);
+    });
+
+    it('should return not equal when of 1 tonne and 0 tonne.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.TONNE, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.TONNE, 0);
+        let ans = weight1.compare(weight2);
+        assert.equal(ans, false);
+    });
+    it('should return not equal when of 1 gm and 1 tonne.', function () {
+        let weight1 = new quantityMeasurement(Unit.weight.GM, 1);
+        let weight2 = new quantityMeasurement(Unit.weight.TONNE, 1);
+        let ans = weight1.compare(weight2);
+        assert.equal(ans, false);
+    });
 });
