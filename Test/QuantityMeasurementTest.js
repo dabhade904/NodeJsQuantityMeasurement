@@ -56,5 +56,9 @@ describe('Legth test cases', function () {
         assert.isDefined(length);
     });
 
+    it('check for null.', function () {
+        let length = new quantityMeasurement(Unit.INCH, 0);
+        assert.isNotNull(length);
+    });
 
 })
