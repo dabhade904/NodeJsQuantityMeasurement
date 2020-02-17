@@ -65,4 +65,11 @@ describe('Legth test cases', function () {
         let length = new quantityMeasurement(Unit.INCH, 1);
         assert.isDefined(length);
     });
+
+    it('should return equal when 0 feet and 0 inch.', function () {
+        let length1 = new quantityMeasurement(Unit.FEET, 0);
+        let length2 = new quantityMeasurement(Unit.INCH, 0);
+        let ans = length1.compare(length2);
+        assert.equal(ans,true);
+    });
 })
