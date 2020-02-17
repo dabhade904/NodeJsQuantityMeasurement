@@ -18,6 +18,16 @@ class Measurement {
             return false;
         }
     }
+
+    addition(unitValue) {
+		if (this.unit == unitValue.unit) {
+			return this.value + unitValue.value;
+		} else if (this.unit != unitValue.unit) {
+			return this.unit * this.value + unitValue.unit * unitValue.value;
+		} else {
+			return 0;
+		}
+	}
 }
 module.exports = Measurement;
 
