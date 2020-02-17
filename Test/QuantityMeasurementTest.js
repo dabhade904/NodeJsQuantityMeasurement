@@ -100,4 +100,11 @@ describe('Legth test cases', function () {
         let ans = length1.compare(length2);
         assert.equal(ans, true);
     });
+
+    it('should return equal when 3 feet and 1 yard.', function () {
+        let length1 = new quantityMeasurement(Unit.FEET, 3);
+        let length2 = new quantityMeasurement(Unit.YARD, 1);
+        let ans = length1.compare(length2);
+        assert.equal(ans,true);
+    });
 })
