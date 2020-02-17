@@ -226,3 +226,26 @@ describe('Weight convert test cases', function () {
         assert.equal(ans, false);
     });
 });
+
+describe('Temprature convert test cases', function () {
+    it('should return equal when of 1 fara and 1 fara.', function () {
+      let temprature1 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 1);
+      let temprature2 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 1);
+      let ans = temprature1.compareTemprature(temprature2);
+      assert.equal(ans, true);
+    });
+    
+    it('should return equal when of 1 fara and 0 fara.', function () {
+      let temprature1 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 1);
+      let temprature2 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 0);
+      let ans = temprature1.compareTemprature(temprature2);
+      assert.equal(ans, false);
+    });
+
+    it('should return equal when of 1 fara and -17.22 celcious.', function () {
+      let temprature1 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 212);
+      let temprature2 = new quantityMeasurement(Unit.temprature.CELSIUS, 100);
+      let ans = temprature1.compareTemprature(temprature2);
+      assert.equal(ans, true);
+    });
+});

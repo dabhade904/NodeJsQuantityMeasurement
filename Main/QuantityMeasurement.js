@@ -24,6 +24,18 @@ class Measurement {
 		} else {
 			return 0;
 		}
+    }
+    
+    compareTemprature(temp) {
+		if (this.unit == temp.unit) {
+			return this.value == temp.value;
+		} else if (temp.unit == 'fahrenheit') {
+			return (this.value == (temp.value - 32) * 5 / 9);
+		} else if (temp.unit == 'celsius') {
+			return (this.value == (temp.value * 9 / 5) + 32);
+		} else {
+			return false;
+		}
 	}
 }
 module.exports = Measurement;
