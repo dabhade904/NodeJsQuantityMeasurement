@@ -129,4 +129,11 @@ describe('Legth test cases', function () {
         assert.equal(ans,true);
     });
 
+    it('should return notEqual when 36 inch and 1 yard.', function () {
+        let length1 = new quantityMeasurement(Unit.INCH, 36);
+        let length2 = new quantityMeasurement(Unit.YARD, 1);
+        let ans = length1.compare(length2);
+        assert.equal(ans,true);
+    });
+
 })
