@@ -142,4 +142,13 @@ describe('Legth test cases', function () {
         let ans = length1.compare(length2);
         assert.equal(ans, true);
     });
+
+
+    it('should return equal when 2 inch and 5 Centimeter', function () {
+        let length1 = new quantityMeasurement(Unit.INCH, 2);
+        let length2 = new quantityMeasurement(Unit.CM, 5);
+        let ans = length1.compare(length2);
+        assert.equal(ans, true);
+    });
+
 })
